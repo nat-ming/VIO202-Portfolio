@@ -7,142 +7,168 @@
       <RouterLink to="/contact">Contact</RouterLink>
     </nav>
 
-  <div class="container">
+  <main class="projects-page">
+    <p class="eyebrow">A CONSTELLATION OF IDEAS</p>
+    <h1>My <span>Projects</span></h1>
+    <p class="intro">Explore the things I've imagined, designed and created.</p>
 
-    <main>
-      <h1>My Projects</h1>
-      
-      <div class="projects-grid">
-        <div v-for="project in projects" :key="project.id" class="project-card">
-          <h2>{{ project.title }}</h2>
-          <p class="project-module">{{ project.module }}</p>
-          <p class="project-description">{{ project.description }}</p>
-          <div class="project-tech">
-            <span v-for="tech in project.technologies" :key="tech" class="tech-tag">
-              {{ tech }}
-            </span>
-          </div>
+<section class="orbit-scroll">
+  <div class="orbit-section">
+    <div class="orbit-scene">
+      <div
+        class="orbit-ring"
+        :style="{ transform: `rotateY(${rotation}deg)` }"
+      >
+       
+          <a
+            v-for="(project, index) in projects"
+            :key="project.id"
+            class="planet"
+            :href="project.link"
+            :target="project.link.startsWith('http') ? '_blank' : '_self'"
+            :rel="project.link.startsWith('http') ? 'noopener noreferrer' : undefined"
+            :style="{
+              '--angle': `${index * (360 / projects.length)}deg`
+            }"
+          >
+            
+            <img :src="project.image" :alt="project.title" />
 
-          <div class="button-container">
-            <a :href="project.gameLink" target="_blank" class="btn game-btn" v-if="project.gameLink">
-               Play Game
-            </a>
-            <a :href="project.youtubeLink" target="_blank" class="btn youtube-btn" v-if="project.youtubeLink">
-              ▶ Watch on YouTube
-            </a>
-            <a :href="project.pdfLink" target="_blank" class="btn pdf-btn" v-if="project.pdfLink">
-              View Comic
-              
-            </a>
-          </div>
-        </div>
+            <span class="planet-title">{{ project.title }}</span>
+
+            <div class="project-tooltip">
+              <h3>{{ project.title }}</h3>
+              <p>{{ project.description }}</p>
+              <small>{{ project.module }}</small>
+              <p class="tooltip-hint">Click to explore ↗</p>
+            </div>
+
+          </a>
+        
+
       </div>
-    </main>
-
-    
+    </div>
   </div>
+</section>
+
+  </main>
 </template>
 
+
 <style scoped>
-
-
-.nav-tabs a {
-  display: block;
-
+.projects-page {
+  min-height: 180vh;
+  padding: 80px 20px;
+  text-align: center;
   color: white;
-  background: black;
-
-  text-decoration: none;
-
-  font-size: 18px;
-
-  padding: 12px 25px;
-
-  border: 2px solid white;
-  border-radius: 30px;
-
-  transition: all 0.3s ease;
+  overflow-x: clip;
 }
 
-.nav-tabs a:hover {
-  background: white;
-
-  color: black;
-
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+.eyebrow {
+  color: #d8c37a;
+  letter-spacing: 0.25em;
+  font-size: 12px;
 }
 
-.nav-tabs a.router-link-active {
-  background: white;
-
-  color: black;
-
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+.projects-page h1 {
+  font-size: clamp(48px, 8vw, 85px);
+  margin: 20px 0;
 }
 
-.welcome {
-  color: #4F1B45;
-
-  align-items: center;
-
-  font-size: 30px;
+.projects-page h1 span {
+  color: #d8b84c;
 }
 
-.tabs {
-  display: flex;
-
-  gap: 20px;
-
-  padding: 20px;
-
-  background: #222;
-}
-
-.tabs button {
-  background: none;
-
-  border: none;
-
+.projects-page {
+  min-height: 180vh;
+  padding: 80px 20px;
+  text-align: center;
   color: white;
-
-  font-size: 18px;
-
-  cursor: pointer;
-
-  padding: 10px 15px;
+  overflow: clip;
 }
 
-.tabs button:hover {
-  color: #aaa;
-}
-
-.tabs button.active {
-  color: white;
-
-  border-bottom: 3px solid white;
-}
-
-.content {
-  padding: 40px;
+.intro {
+  color: rgba(255, 255, 255, 0.7);
 }
 
 
-/* styling */
-
-.app {
+.orbit-scroll {
+  height: 250vh;
   position: relative;
-  overflow-x: hidden;
+  margin-top: 40px;
 }
 
-.app::before {
-  content: "";
-  position: fixed;
+.orbit-section {
+  height: 100vh;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
+}
+
+.orbit-scene {
+  width: 100%;
+  height: 420px;
+  position: relative;
+  perspective: 1000px;
+}
+
+.orbit-ring {
+  position: absolute;
   inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background:
-    radial-gradient(circle at 15% 80%, rgba(79, 27, 69, 0.18), transparent 30%),
-    radial-gradient(circle at 85% 20%, rgba(255, 215, 0, 0.06), transparent 25%);
+  transform-style: preserve-3d;
+  transition: none;
+}
+
+
+.planet {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 180px;
+  text-decoration: none;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+
+  transform:
+    translate(-50%, -50%)
+    rotateY(var(--angle))
+    translateZ(300px);
+
+  backface-visibility: visible;
+  transition: filter 0.3s ease;
+}
+
+.planet img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid rgba(216, 195, 122, 0.8);
+  box-shadow: 0 0 25px rgba(216, 195, 122, 0.2);
+  transition: all 0.4s ease;
+}
+
+.planet span {
+  font-size: 15px;
+  letter-spacing: 0.08em;
+}
+
+.planet:hover img {
+  transform: scale(1.15);
+  box-shadow:
+    0 0 20px #d8c37a,
+    0 0 50px rgba(216, 195, 122, 0.5);
+}
+
+.planet:hover {
+  z-index: 10;
 }
 
 .nav-tabs {
@@ -185,157 +211,138 @@
   padding: 25px;
 }
 
+.nav-tabs a {
+  display: block;
 
+  color: white;
+  background: black;
 
-@media (max-width: 650px) {
-  .nav-tabs {
-    gap: 8px;
-    padding: 14px 10px;
-  }
+  text-decoration: none;
 
-  .nav-tabs a {
-    min-width: auto;
-    padding: 10px 13px;
-    font-size: 11px;
-  }
-}
-.container {
-  position: relative;
-  z-index: 2;
-  width: min(1150px, calc(100% - 40px));
-  margin: 55px auto 90px;
+  font-size: 18px;
+
+  padding: 12px 25px;
+
+  border: 2px solid white;
+  border-radius: 30px;
+
+  transition: all 0.3s ease;
 }
 
-main {
-  padding-bottom: 40px;
+.nav-tabs a:hover {
+  background: white;
+
+  color: black;
+
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
 }
 
-main > h1 {
-  margin-bottom: 42px;
-  text-align: center;
-  font-size: clamp(45px, 7vw, 80px);
-  letter-spacing: -0.05em;
+.nav-tabs a.router-link-active {
+  background: white;
+
+  color: black;
+
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
 }
 
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
-}
-
-.project-card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  min-height: 390px;
-  padding: 28px;
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 24px;
-  background: linear-gradient(145deg, rgba(30,23,34,0.82), rgba(8,7,12,0.82));
-  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-  transition: transform .3s ease, border-color .3s ease, box-shadow .3s ease;
-}
-
-.project-card::before {
-  content: "";
+/* Keep the project planet as the positioning reference */
+.planet {
   position: absolute;
-  top: 0;
-  left: 28px;
-  right: 28px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255,215,0,.65), transparent);
+  overflow: visible;
 }
 
-.project-card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(255,215,0,0.35);
-  box-shadow: 0 30px 65px rgba(0,0,0,0.45);
+/* Description panel hidden by default */
+.project-tooltip {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 240px;
+  padding: 18px;
+  box-sizing: border-box;
+
+  background: rgba(15, 12, 30, 0.96);
+  border: 1px solid rgba(216, 195, 122, 0.8);
+  border-radius: 14px;
+  color: white;
+  text-align: left;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transform: translate(-50%, -45%) scale(0.9);
+  transition: opacity 0.3s ease,
+              transform 0.3s ease,
+              visibility 0.3s ease;
+
+  z-index: 20;
 }
 
-.project-card h2 {
-  margin-bottom: 10px;
-  font-size: 25px;
-}
-
-.project-module {
+.project-tooltip h3 {
   color: #d8c37a;
-  font-size: 12px;
-  letter-spacing: .08em;
-  text-transform: uppercase;
+  font-size: 17px;
+  margin: 0 0 10px;
 }
 
-.project-description {
-  color: rgba(255,255,255,.68);
-  line-height: 1.7;
+.project-tooltip p {
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 0 0 10px;
 }
 
-.project-tech {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
-  margin: auto 0 22px;
-}
-
-.tech-tag {
-  padding: 6px 10px;
-  border: 1px solid rgba(255,255,255,.12);
-  border-radius: 999px;
-  color: rgba(255,255,255,.75);
-  background: rgba(255,255,255,.04);
+.project-tooltip small {
+  color: rgba(255, 255, 255, 0.65);
   font-size: 11px;
 }
 
-.button-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+.project-tooltip .tooltip-hint {
+  color: #d8c37a;
+  margin: 12px 0 0;
 }
 
-.btn {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 14px;
-  border: 1px solid rgba(255,255,255,.3);
-  border-radius: 999px;
-  color: white;
-  text-decoration: none;
-  background: rgba(255,255,255,.06);
-  font-size: 12px;
-  transition: .25s ease;
+/* Reveal the description when hovering over a planet */
+.planet:hover .project-tooltip,
+.planet:focus-visible .project-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -45%) scale(1);
 }
 
-.btn:hover {
-  background: rgba(255,215,0,.13);
-  border-color: rgba(255,215,0,.6);
-  transform: translateY(-2px);
+.planet:hover {
+  z-index: 100;
 }
 
-@media (max-width: 900px) {
-  .projects-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
 
-@media (max-width: 600px) {
-  .container {
-    width: min(100% - 22px, 1150px);
-    margin-top: 25px;
+@media (max-width: 650px) {
+  .orbit-scene {
+    height: 300px;
   }
 
-  .projects-grid {
-    grid-template-columns: 1fr;
+  .planet {
+    width: 130px;
+    transform:
+      translate(-50%, -50%)
+      rotateY(var(--angle))
+      translateZ(180px);
+  }
+
+  .planet img {
+    width: 110px;
+    height: 110px;
   }
 }
 </style>
 
-<script>
 
+
+<script>
 export default {
   name: 'ProjectsPage',
-  
+
   data() {
     return {
+      rotation: 0,
+
       projects: [
         {
           id: 1,
@@ -343,7 +350,9 @@ export default {
           module: 'IMY 210 - Advanced Markup Languages',
           description: 'A web-based game built with Adobe Animate, featuring custom artwork and interactive gameplay.',
           technologies: ['Adobe Animate', 'Adobe Illustrator', 'Adobe Photoshop', 'JavaScript'],
-          gameLink: '/game/Mutendeh_Project4/Mutendeh_Project4.html'
+          gameLink: '/game/Mutendeh_Project4/Mutendeh_Project4.html',
+          image: '/images/game.png',
+          link: '/game/Mutendeh_Project4/Mutendeh_Project4.html'
         },
         {
           id: 2,
@@ -352,18 +361,65 @@ export default {
           description: 'Calm animation on YouTube',
           technologies: ['Adobe Photoshop', 'Adobe Animate', 'Adobe Illustrator'],
           youtubeLink: 'https://youtu.be/N9hEoVlRg70',
-          link: '#'
+          image: '/images/animation.png',
+          link: 'https://youtu.be/N9hEoVlRg70'
         },
         {
           id: 3,
           title: 'Vertical Narrative Comic',
           module: 'VIO 202',
           description: 'Vertical Narrative with sounds and animations',
-          technologies: ['Adobe Illustrator', 'Adobe Fresco', 'Ibis PaintX',' Adobe Audition', 'Adobe Animate',' VUE'],
-          link: 'https://snazzy-nougat-1f0d80.netlify.app/'
+          technologies: ['Adobe Illustrator', 'Adobe Fresco', 'Ibis PaintX', 'Adobe Audition', 'Adobe Animate', 'Vue'],
+          link: 'https://snazzy-nougat-1f0d80.netlify.app/',
+          image: '/images/comic.png'
+
         }
       ]
     }
+  },
+
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll, {
+      passive: true
+    })
+
+    this.handleScroll()
+  },
+
+  beforeUnmount() {
+    window.removeEventListener('scroll', this.handleScroll)
+  },
+
+  methods: {
+   
+  handleScroll() {
+  const section = document.querySelector('.orbit-scroll')
+
+  if (!section) return
+
+  const sectionDocumentTop =
+    section.getBoundingClientRect().top + window.scrollY
+
+  const startScroll = sectionDocumentTop
+  const endScroll =
+    sectionDocumentTop + section.offsetHeight - window.innerHeight
+
+  const scrollRange = endScroll - startScroll
+
+  if (scrollRange <= 0) return
+
+  const progress = Math.min(
+    1,
+    Math.max(
+      0,
+      (window.scrollY - startScroll) / scrollRange
+    )
+  )
+
+  this.rotation = progress * 360
+}
+
   }
 }
 </script>
+

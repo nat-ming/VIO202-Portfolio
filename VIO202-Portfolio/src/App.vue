@@ -20,10 +20,7 @@
           <RouterLink to="/contact">Contact</RouterLink>
         </div>
 
-        <p class="footer-tagline">
-          A collection of ideas, experiments, stories and skills, 
-                connected through my creative journey.
-        </p>
+      
       </div>
     </footer>
   </div>

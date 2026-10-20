@@ -50,13 +50,13 @@
        <img
             src="/images/rail.jpeg"
             alt="Railway"
-            :style="{ '--parallax': `${scrollY * -0.04}px` }"
+            :style="{ '--parallax': `${scrollY * 0.08}px` }"
           />
 
           <img
             src="/images/sunset.JPG"
             alt="Sunset"
-            :style="{ '--parallax': `${scrollY * 0.06}px` }"
+            :style="{ '--parallax': `${scrollY * 0.08}px` }"
           />
         <br/>
         My creative process is also a lot about learning. Coding hasn't always come naturally to me, but learning 

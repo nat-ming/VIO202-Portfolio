@@ -11,27 +11,75 @@
     
     <main>
      <p>Lets create a connection</p>
+      <!-- <h2>Get in Touch</h2> -->
+     <!-- <p>
+              Every project is a little part of my creative journey, and I'm always open to discovering where the next connection might lead.
+              Whether you'd like to talk about a project, collaborate on an idea, share an opportunity, or simply say hello, I'd love to hear from you.
+          </p> -->
       
       <div class="contact-container">
         <div class="contact-info">
-          <h2>Get in Touch</h2>
-          <p>
-              Every project is a little part of my creative journey, and I'm always open to discovering where the next connection might lead.
-              Whether you'd like to talk about a project, collaborate on an idea, share an opportunity, or simply say hello, I'd love to hear from you.
-          </p>
-
           
-          <div class="info-item">
+          
+
+            <div class="contant_Orbit">
+                <img src="/images/orbit.png" alt="orbit" />
+            </div>
+          
+            <div class="social-icons">
+              <a
+                class="ig"
+                href="https://www.instagram.com/YOUR_USERNAME/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit my Instagram"
+              >
+                <img src="/images/ig.png" alt="Instagram" />
+              </a>
+
+              <!-- <a
+                href="https://www.linkedin.com/in/YOUR_USERNAME/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit my LinkedIn"
+              >
+                <img src="/images/linkedin.png" alt="LinkedIn" />
+              </a> -->
+
+              <a
+              class="git"
+                href="https://github.com/YOUR_USERNAME"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit my GitHub"
+              >
+                <img src="/images/git.png" alt="GitHub" />
+              </a>
+
+               <a
+               class="tt"
+                href="https://www.instagram.com/YOUR_USERNAME/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Visit my Instagram"
+              >
+                <img src="/images/tt.png" alt="Instagram" />
+              </a>
+
+            </div>
+              
+          
+          <!-- <div class="info-item">
             <strong>Email:</strong>
             <p>mova.nk23@gmail.com</p>
           </div>
           
-          <!-- <div class="info-item">
-            <strong>GitHub</strong>
+            <button>
+            
             <p>https://github.com/nat-ming</p>
-          </div> -->
+            </button> -->
 
-            <div class="info-item">
+            <!-- <div class="info-item">
             <strong>Instagram</strong>
             <p>crystal_taliana</p>
           </div>
@@ -76,7 +124,7 @@
             
 
             <button type="submit" class="btn">Send Message</button>
-          </form>
+          </form> -->
         </div>
       </div>
     </main>
@@ -109,6 +157,7 @@
 
   transition: all 0.3s ease;
 }
+
 
 .nav-tabs a:hover {
   background: white;
@@ -231,6 +280,96 @@
   padding: 25px;
 }
 
+h2{
+   display: flex;
+  justify-content: center;
+}
+
+.contant_Orbit {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto 20px;
+  position: relative;
+  left: 280px;
+  z-index: 1;
+}
+
+.contant_Orbit img {
+  width: 500px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  
+  
+}
+
+.social-icons img {
+  width: 80px;
+  height: 80px;
+  /* object-fit: contain;
+  display: block; */
+  
+}
+
+.ig{
+  position: absolute;
+  left: 260px;
+  top: 200px;
+  z-index:4 ;
+}
+
+.tt{
+  position: absolute;
+  left: 600px;
+  top: 150px;
+  z-index: 4;
+}
+
+.git{
+  position: absolute;
+  left: 400px;
+  top: 480px;
+  z-index: 4 ;
+}
+
+.git:hover .git {
+    filter: grayscale(100%);
+    opacity: 0.4;
+}
+
+
+.git:hover {
+    filter: grayscale(0%) drop-shadow(0 0 25px white);
+    opacity: 1;
+    transform: scale(1.15);
+}
+
+
+.tt:hover {
+    filter: grayscale(0%) drop-shadow(0 0 25px white);
+    opacity: 1;
+    transform: scale(1.15);
+}
+
+.tt:hover .tt{
+    filter: grayscale(100%);
+    opacity: 0.4;
+}
+
+.ig:hover {
+    filter: grayscale(0%) drop-shadow(0 0 25px white);
+    opacity: 1;
+    transform: scale(1.15);
+}
+
+.ig:hover .ig{
+    filter: grayscale(100%);
+    opacity: 0.4;
+}
+
+
+
 
 @media (max-width: 650px) {
   .nav-tabs {
@@ -266,7 +405,7 @@ main > p:first-child {
   gap: 24px;
 }
 
-.contact-info,
+/* .contact-info,
 .contact-form {
   padding: 35px;
   border: 1px solid rgba(255,255,255,.12);
@@ -274,7 +413,7 @@ main > p:first-child {
   background: rgba(10,8,15,.72);
   backdrop-filter: blur(14px);
   box-shadow: 0 25px 70px rgba(0,0,0,.35);
-}
+} */
 
 .contact-info h2,
 .contact-form h2 {
@@ -305,18 +444,18 @@ main > p:first-child {
   overflow-wrap: anywhere;
 }
 
-.form-group {
+/* .form-group {
   margin-bottom: 18px;
-}
+} */
 
-.form-group label {
+/* .form-group label {
   display: block;
   margin-bottom: 7px;
   color: rgba(255,255,255,.75);
   font-size: 13px;
-}
+} */
 
-.form-group input,
+/* .form-group input,
 .form-group textarea {
   width: 100%;
   padding: 13px 14px;
@@ -327,13 +466,13 @@ main > p:first-child {
   background: rgba(255,255,255,.045);
   resize: vertical;
   transition: .25s ease;
-}
+} */
 
-.form-group input:focus,
+/* .form-group input:focus,
 .form-group textarea:focus {
   border-color: rgba(255,215,0,.6);
   box-shadow: 0 0 0 3px rgba(255,215,0,.07);
-}
+} */
 
 .contact-form .btn {
   cursor: pointer;

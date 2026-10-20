@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'Starcruiser';
-  src: url('/fonts/starcruiser-font/StarcruiserItalic-Wxaz.otf') format('truetype');
+  font-family: 'Seramonde';
+  src: url('/fonts/seramonde/Seramonde.otf') format('truetype');
 }
 
 @font-face {
@@ -10,9 +10,15 @@
   font-style: normal;
 }
 
+@font-face{
+  font-family: 'monimer';
+  src: url('/fonts/monimer/monimer.otf') format('truetype');
+  
+}
 
 h1 {
-  font-family: 'Starcruiser', sans-serif;
+  font-family: 'monimer', sans-serif;
+  font-size: 72px;
 }
 /* Segoe UI */
 
@@ -80,6 +86,10 @@ p {
   z-index: 5;
 }
 
+.hero-text{
+font-family: 'Seramonde' , sans sans-serif;
+
+}
 .footer-content {
   max-width: 1100px;
   margin: 0 auto;

@@ -1,7 +1,24 @@
 
 <template>
     <main class="home-page">
+
+       <section class="hero">
+            <!-- <p class="eyebrow">A CREATIVE CONSTELLATION</p> -->
+           
+            <p class="hero-text">
+                 Explore the collection of ideas, experiments, stories and skills, 
+                connected through my creative journey.
+            </p>
+
+             <h1>WELCOME<span>!</span></h1>
+            <!-- <RouterLink to="/projects" class="explore-button">Explore my work <span>↗</span></RouterLink> -->
+          </section>
        <div class="home">
+         
+         <!-- <p class="tagline">
+          A collection of ideas, experiments, stories and skills, 
+                connected through my creative journey.
+        </p> -->
 
           <div class="image-nav">
 
@@ -23,16 +40,7 @@
     </div>
 </div>
 
-        <section class="hero">
-            <!-- <p class="eyebrow">A CREATIVE CONSTELLATION</p> -->
-           
-            <!-- <p class="hero-text">
-                A collection of ideas, experiments, stories and skills, 
-                connected through my creative journey.
-            </p> -->
-             <h1>WELCOME<span>!</span></h1>
-            <!-- <RouterLink to="/projects" class="explore-button">Explore my work <span>↗</span></RouterLink> -->
-        </section>
+     
 
         <div class="home-orbit orbit-one"></div>
         <div class="home-orbit orbit-two"></div>
@@ -125,8 +133,8 @@
 
 .hero h1 {
   position: absolute;
-  bottom: -10px;
-  /* left: 30%; */
+  top: 50px;
+  left: 30%;
   /* color: #4F1B45; */
   
   margin-bottom: 15px;
@@ -144,9 +152,10 @@
   color: #d8b84c;
 }
 
-/* .hero-text {
+.hero-text {
   position: absolute;
-  top: 5%;
+  top: 150px;
+  left: 30%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -156,9 +165,9 @@
   font-size: clamp(16px, 2vw, 20px);
   line-height: 1.8;
   
-} */
+}
 
-.explore-button {
+/* .explore-button {
   display: inline-flex;
   align-items: center;
   gap: 12px;
@@ -169,13 +178,20 @@
   text-decoration: none;
   background: rgba(255,215,0,0.07);
   transition: 0.3s ease;
-}
+} */
 
 .explore-button:hover {
   background: rgba(255,215,0,0.16);
   box-shadow: 0 0 25px rgba(255,215,0,0.12);
   transform: translateY(-3px);
 }
+
+/* .tagline{
+  position: absolute;
+  top: 200px;
+  left: 300px;
+
+} */
 
 .home-orbit {
   position: absolute;
