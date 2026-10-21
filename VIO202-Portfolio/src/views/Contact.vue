@@ -29,7 +29,7 @@
             <div class="social-icons">
               <a
                 class="ig"
-                href="https://www.instagram.com/YOUR_USERNAME/"
+                href="https://www.instagram.com/crystal_taliana?vrfl=MXNxMHhjbTk1ZGxlZw%3D%3D&utm_source=qr"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Visit my Instagram"
@@ -37,18 +37,10 @@
                 <img src="/images/ig.png" alt="Instagram" />
               </a>
 
-              <!-- <a
-                href="https://www.linkedin.com/in/YOUR_USERNAME/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Visit my LinkedIn"
-              >
-                <img src="/images/linkedin.png" alt="LinkedIn" />
-              </a> -->
-
-              <a
+            
+            <a
               class="git"
-                href="https://github.com/YOUR_USERNAME"
+                href="https://github.com/nat-ming"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Visit my GitHub"
@@ -58,7 +50,7 @@
 
                <a
                class="tt"
-                href="https://www.instagram.com/YOUR_USERNAME/"
+                href="https://www.tiktok.com/@taliana_natt?_r=1&_t=ZS-98qp3MPc7XO"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Visit my Instagram"
@@ -314,7 +306,7 @@ h2{
 
 .ig{
   position: absolute;
-  left: 260px;
+  left: 280px;
   top: 200px;
   z-index:4 ;
 }
@@ -322,14 +314,14 @@ h2{
 .tt{
   position: absolute;
   left: 600px;
-  top: 150px;
+  top: 120px;
   z-index: 4;
 }
 
 .git{
   position: absolute;
   left: 400px;
-  top: 480px;
+  top: 450px;
   z-index: 4 ;
 }
 
@@ -393,7 +385,8 @@ h2{
 main > p:first-child {
   margin-bottom: 35px;
   text-align: center;
-  color: #d8c37a;
+  /* color: #d8c37a; */
+  color: white;
   font-size: 12px;
   letter-spacing: .3em;
   text-transform: uppercase;
@@ -425,7 +418,7 @@ main > p:first-child {
   color: rgba(255,255,255,.68);
   line-height: 1.75;
 }
-
+/* 
 .info-item {
   padding: 17px 0;
   border-top: 1px solid rgba(255,255,255,.09);
@@ -442,7 +435,7 @@ main > p:first-child {
   margin: 7px 0 0;
   color: rgba(255,255,255,.78);
   overflow-wrap: anywhere;
-}
+} */
 
 /* .form-group {
   margin-bottom: 18px;
@@ -474,10 +467,10 @@ main > p:first-child {
   box-shadow: 0 0 0 3px rgba(255,215,0,.07);
 } */
 
-.contact-form .btn {
+/* .contact-form .btn {
   cursor: pointer;
   padding: 12px 22px;
-}
+} */
 
 @media (max-width: 800px) {
   .contact-container {

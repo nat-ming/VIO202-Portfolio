@@ -3,18 +3,23 @@
   src: url('/fonts/seramonde/Seramonde.otf') format('truetype');
 }
 
-@font-face {
-  font-family: 'Night';
-  src: url('/fonts/night-pumpkind-font/NightPumpkind-nRORO.otf') format('truetype');
-   font-weight: normal;
-  font-style: normal;
-}
+/* @font-face {
+  font-family: 'Hello';
+  src: url('fonts/hello_baby/hello.otf') format('truetype');
+ 
+} */
 
 @font-face{
   font-family: 'monimer';
   src: url('/fonts/monimer/monimer.otf') format('truetype');
   
 }
+
+/* @font-face{
+  font-family: 'Smile moon';
+  src: url('/fonts/smile/Smile moon.otf') format('truetype');
+  
+} */
 
 h1 {
   font-family: 'monimer', sans-serif;
@@ -23,13 +28,13 @@ h1 {
 /* Segoe UI */
 
 :root {
-  font-family: "Night", Arial, sans-serif;
+  font-family: "Hello", Arial, sans-serif;
+  font-size: 16px;
   color: #f7f3ea;
   background: #07060b;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
 }
-
 * {
   box-sizing: border-box;
 }

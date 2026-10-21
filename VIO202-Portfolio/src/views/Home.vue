@@ -23,12 +23,12 @@
           <div class="image-nav">
 
             <RouterLink to="/about" class="nav-image">
-              <img src="/images/home.png" alt="Home">
+              <img src="/images/home.PNG" alt="Home">
               <span>About</span>
             </RouterLink>
 
             <RouterLink to="/projects" class="nav-image">
-              <img src="/images/projects.png" alt="Projects">
+              <img src="/images/projects.PNG" alt="Projects">
               <span>Projects</span>
             </RouterLink>
 
@@ -123,6 +123,13 @@
   box-shadow: 0 30px 100px rgba(0,0,0,0.45); */
 }
 
+.hero-text{
+  color: #d8c37a;
+  font-size: 8px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+
 .eyebrow {
   margin-bottom: 18px;
   color: #d8c37a;
@@ -149,7 +156,7 @@
 }
 
 .hero h1 span {
-  color: #d8b84c;
+  color: #D4A910;
 }
 
 .hero-text {

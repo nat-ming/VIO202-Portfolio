@@ -8,9 +8,9 @@
     </nav>
 
   <main class="projects-page">
-    <p class="eyebrow">A CONSTELLATION OF IDEAS</p>
+    <p class="eyebrow">EXPLORE MY IMAGINATION AND CREATIVITY.</p>
     <h1>My <span>Projects</span></h1>
-    <p class="intro">Explore the things I've imagined, designed and created.</p>
+    <!-- <p class="intro">Explore the things I've imagined, designed and created.</p> -->
 
 <section class="orbit-scroll">
   <div class="orbit-section">
@@ -56,6 +56,146 @@
 
 
 <style scoped>
+.nav-tabs a {
+  display: block;
+
+  color: white;
+  background: black;
+
+  text-decoration: none;
+
+  font-size: 18px;
+
+  padding: 12px 25px;
+
+  border: 2px solid white;
+  border-radius: 30px;
+
+  transition: all 0.3s ease;
+}
+
+
+.nav-tabs a:hover {
+  background: white;
+
+  color: black;
+
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+.nav-tabs a.router-link-active {
+  background: white;
+
+  color: black;
+
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+.welcome {
+  color: #4F1B45;
+
+  align-items: center;
+
+  font-size: 30px;
+}
+
+.tabs {
+  display: flex;
+
+  gap: 20px;
+
+  padding: 20px;
+
+  background: #222;
+}
+
+.tabs button {
+  background: none;
+
+  border: none;
+
+  color: white;
+
+  font-size: 18px;
+
+  cursor: pointer;
+
+  padding: 10px 15px;
+}
+
+.tabs button:hover {
+  color: #aaa;
+}
+
+.tabs button.active {
+  color: white;
+
+  border-bottom: 3px solid white;
+}
+
+.content {
+  padding: 40px;
+}
+
+
+/* styling */
+
+.app {
+  position: relative;
+  overflow-x: hidden;
+}
+
+.app::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 15% 80%, rgba(79, 27, 69, 0.18), transparent 30%),
+    radial-gradient(circle at 85% 20%, rgba(255, 215, 0, 0.06), transparent 25%);
+}
+
+.nav-tabs {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  padding: 22px 30px;
+  background: rgba(5, 5, 9, 0.72);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(14px);
+}
+
+.nav-tabs a {
+  min-width: 105px;
+  text-align: center;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 600;
+  background: rgba(0, 0, 0, 0.45);
+  border-color: rgba(255,255,255,0.65);
+}
+
+.nav-tabs a:hover,
+.nav-tabs a.router-link-active {
+  transform: translateY(-2px);
+}
+
+.nav-tabs {
+  position: relative;
+
+  z-index: 10;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 40px;
+
+  padding: 25px;
+}
+
 .projects-page {
   min-height: 180vh;
   padding: 80px 20px;
@@ -127,7 +267,7 @@
 .planet {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 40%;
   width: 180px;
   text-decoration: none;
   color: white;
@@ -150,7 +290,7 @@
   height: 160px;
   object-fit: cover;
   border-radius: 50%;
-  border: 2px solid rgba(216, 195, 122, 0.8);
+  border: 3px solid #D4A910;
   box-shadow: 0 0 25px rgba(216, 195, 122, 0.2);
   transition: all 0.4s ease;
 }
@@ -171,79 +311,7 @@
   z-index: 10;
 }
 
-.nav-tabs {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  padding: 22px 30px;
-  background: rgba(5, 5, 9, 0.72);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  backdrop-filter: blur(14px);
-}
 
-.nav-tabs a {
-  min-width: 105px;
-  text-align: center;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  font-size: 13px;
-  font-weight: 600;
-  background: rgba(0, 0, 0, 0.45);
-  border-color: rgba(255,255,255,0.65);
-}
-
-.nav-tabs a:hover,
-.nav-tabs a.router-link-active {
-  transform: translateY(-2px);
-}
-
-.nav-tabs {
-  position: relative;
-
-  z-index: 10;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  gap: 40px;
-
-  padding: 25px;
-}
-
-.nav-tabs a {
-  display: block;
-
-  color: white;
-  background: black;
-
-  text-decoration: none;
-
-  font-size: 18px;
-
-  padding: 12px 25px;
-
-  border: 2px solid white;
-  border-radius: 30px;
-
-  transition: all 0.3s ease;
-}
-
-.nav-tabs a:hover {
-  background: white;
-
-  color: black;
-
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
-}
-
-.nav-tabs a.router-link-active {
-  background: white;
-
-  color: black;
-
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
-}
 
 /* Keep the project planet as the positioning reference */
 .planet {
