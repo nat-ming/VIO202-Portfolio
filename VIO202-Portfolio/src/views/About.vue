@@ -107,12 +107,12 @@
 <section class="skills-section" id="skills">
   <h1>My <span>Skills</span></h1>
 
-  <p class="skills-intro">
+  <!-- <p class="skills-intro">
     Every skill is another star in my creative universe.
     Explore what I've learned and what I'm still discovering.
-  </p>
+  </p> -->
 
-  <div class="skills-planets">
+ <!--<div class="skills-planets">
     <button
       v-for="planet in planets"
       :key="planet.id"
@@ -134,7 +134,7 @@
         {{ selectedPlanet === planet.id ? 'Close' : 'Explore' }}
       </span>
     </button>
-  </div>
+  </div> -->
 
   <Transition name="planet-reveal">
     <div
@@ -181,7 +181,7 @@ import { ref, onMounted, onUnmounted, computed } from 'vue'
 
 const scrollY = ref(0)
 
-const selectedPlanet = ref(null)
+//const selectedPlanet = ref(null)
 
 
 function handleScroll() {
@@ -196,63 +196,63 @@ onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
 })
 
-const planets = [
-  {
-    id: 'programming',
-    name: 'Programming',
-    symbol: '✦',
-    colour: 'planet-pink',
-    description: 'The logical side of my creative universe.',
-    skills: ['C++','Object-oriented programming'],
-    level: 'Developing my programming skills'
-  },
-  {
-    id: 'web',
-    name: 'Web Development',
-    symbol: '✧',
-    colour: 'planet-green',
-    description: 'Turning ideas into interactive digital experiences.',
-    skills: ['HTML', 'CSS', 'JavaScript', 'Vue.js', 'Git and GitHub'],
-    level: 'Learning through projects'
-  },
-  {
-    id: 'creative',
-    name: 'Creative Design',
-    symbol: '☾',
-    colour: 'planet-purple',
-    description: 'Exploring how visuals, movement and atmosphere tell stories.',
-    skills: [
-      'Visual design',
-      'Digital storytelling',
-      'Animation and interactive media'
-    ],
-    level: 'Exploring and experimenting'
-  },
-  {
-    id: 'personal',
-    name: 'Personal Strengths',
-    symbol: '✧',
-    colour: 'planet-pink',
-    description: 'The qualities that shape how I learn and create.',
-    skills: [
-      'Problem-solving',
-      'Creativity',
-      'Communication',
-      'Teamwork',
-      'Adaptability'
-    ],
-    level: 'Growing with every experience'
-  }
-]
+// const planets = [
+//   {
+//     id: 'programming',
+//     name: 'Programming',
+//     symbol: '✦',
+//     colour: 'planet-pink',
+//     description: 'The logical side of my creative universe.',
+//     skills: ['C++','Object-oriented programming'],
+//     level: 'Developing my programming skills'
+//   },
+//   {
+//     id: 'web',
+//     name: 'Web Development',
+//     symbol: '✧',
+//     colour: 'planet-green',
+//     description: 'Turning ideas into interactive digital experiences.',
+//     skills: ['HTML', 'CSS', 'JavaScript', 'Vue.js', 'Git and GitHub'],
+//     level: 'Learning through projects'
+//   },
+//   {
+//     id: 'creative',
+//     name: 'Creative Design',
+//     symbol: '☾',
+//     colour: 'planet-purple',
+//     description: 'Exploring how visuals, movement and atmosphere tell stories.',
+//     skills: [
+//       'Visual design',
+//       'Digital storytelling',
+//       'Animation and interactive media'
+//     ],
+//     level: 'Exploring and experimenting'
+//   },
+//   {
+//     id: 'personal',
+//     name: 'Personal Strengths',
+//     symbol: '✧',
+//     colour: 'planet-pink',
+//     description: 'The qualities that shape how I learn and create.',
+//     skills: [
+//       'Problem-solving',
+//       'Creativity',
+//       'Communication',
+//       'Teamwork',
+//       'Adaptability'
+//     ],
+//     level: 'Growing with every experience'
+//   }
+// ]
 
-const activePlanet = computed(() =>
-  planets.find(planet => planet.id === selectedPlanet.value) ?? null
-)
+// const activePlanet = computed(() =>
+//   planets.find(planet => planet.id === selectedPlanet.value) ?? null
+// )
 
-function togglePlanet(id) {
-  selectedPlanet.value =
-    selectedPlanet.value === id ? null : id
-}
+// function togglePlanet(id) {
+//   selectedPlanet.value =
+//     selectedPlanet.value === id ? null : id
+// }
 
 </script>
 
